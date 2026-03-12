@@ -1,0 +1,52 @@
+/* Global reset and typography */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: aqua;
+}
+
+/* header/nav */
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+nav {
+    background-color: #24c351;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+nav ul li {
+    margin: 0 15px;
+}
+
+/* profile image styling */
+.profile-img {
+    display: block;
+    margin: 20px auto;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; 
+    border: 5px solid transparent;
+    box-sizing: border-box;
+    animation: borderChange 4s infinite linear, rotateAnim 6s infinite linear;
+}
+
+@keyframes borderChange {
+    0%   { border-color: #24c351; }
+    25%  { border-color: #333; }
+    50%  { border-color: #24c351; }
+    75%  { border-color: #333; }
+    100% { border-color: #24c351; }
+}
+
+@keyframes rotateAnim {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
