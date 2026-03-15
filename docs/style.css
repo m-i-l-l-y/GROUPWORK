@@ -1,4 +1,12 @@
+.coming-soon-btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-weight: bold;
+}
 
+.coming-soon-btn:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -621,7 +629,15 @@ html {
     height: 40px;
     margin-right: 8px; 
 }
+.coming-soon-btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-weight: bold;
+}
 
+.coming-soon-btn:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
 
 
 
