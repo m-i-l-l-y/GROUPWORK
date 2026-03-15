@@ -263,8 +263,8 @@ html {
     margin: 20px auto;
     width: 280px;
     height: 550px;
-    object-fit: cover;   /* crops instead of squashing */
-    object-position: center; /* keeps subject centered */
+    object-fit: cover;  
+    object-position: center; 
     border-radius: 0;
     border: 5px solid transparent;
     box-sizing: border-box;
@@ -298,7 +298,6 @@ html {
     text-align: right; 
 }
 
-/* skills list: no bullet points */
 .skills-block ul {
     list-style: none;
     margin: 0;
@@ -308,7 +307,7 @@ html {
     margin-bottom: 0.25rem;
 }
 
-/* Contact page styling */
+
 .contact-hero {
     position: relative;
     padding: 100px 1.5rem 80px;
@@ -525,13 +524,13 @@ html {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;          /* make links horizontal */
-    flex-wrap: wrap;        /* allow wrapping if too many */
-    gap: 1rem;              /* space between each link */
+    display: flex;        
+    flex-wrap: wrap;        
+    gap: 1rem;              
 }
 
 .footer-section ul li {
-    margin: 0;              /* remove bottom margin */
+    margin: 0;             
 }
 
 
@@ -581,31 +580,31 @@ html {
     opacity: 0.9;
 }
 
-/* Intro section layout */
+
 .intro-section {
-    display: flex;              /* image + text side by side */
-    align-items: center;        /* vertical alignment */
-    justify-content: flex-start;/* keep them aligned left */
-    gap: 15px;                  /* smaller space between image and text */
+    display: flex;             
+    align-items: center;       
+    justify-content: flex-start;
+    gap: 15px;                 
     margin: 20px auto;
     max-width: 1000px;
 }
 
 .intro-image {
-    flex: 0 0 auto;             /* image keeps its size */
+    flex: 0 0 auto;           
 }
 
 .intro-text {
-    flex: 1;                    /* text takes remaining space */
+    flex: 1;                  
     padding: 10px;
 }
 
-/* Skills section layout */
+
 .skills-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
-    column-gap: 10px;   /* smaller horizontal space between skills */
-    row-gap: 15px;      /* vertical spacing between rows */
+    column-gap: 10px;   
+    row-gap: 15px;      
     list-style: none;
     padding: 0;
     margin: 20px 0;
@@ -620,7 +619,7 @@ html {
 .skills-list img {
     width: 40px;
     height: 40px;
-    margin-right: 8px; /* space between icon and text */
+    margin-right: 8px; 
 }
 
 
