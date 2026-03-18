@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.calculator-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.mode-switcher {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.mode-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.mode-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.mode-btn.active {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.calculator {
+    background: #1a1a1a;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.calculator-display {
+    background: #0a0a0a;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: right;
+    border: 2px solid #333;
+}
+
+.previous-operand {
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    min-height: 25px;
+}
+
+.current-operand {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 300;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.calculator-buttons {
+    display: grid;
+    gap: 10px;
+}
+
+.simple-calculator {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.scientific-calculator {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.hidden {
+    display: none;
+}
+
+.btn {
+    background: #333;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 20px;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    background: #444;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn.number {
+    background: #2a2a2a;
+}
+
+.btn.number:hover {
+    background: #3a3a3a;
+}
+
+.btn.operator {
+    background: #ff9500;
+}
+
+.btn.operator:hover {
+    background: #ffad33;
+}
+
+.btn.scientific {
+    background: #5856d6;
+    font-size: 1.2rem;
+}
+
+.btn.scientific:hover {
+    background: #7a78eb;
+}
+
+.btn[data-action="clear"] {
+    background: #ff3b30;
+}
+
+.btn[data-action="clear"]:hover {
+    background: #ff6b60;
+}
+
+.btn[data-action="delete"] {
+    background: #ff9500;
+}
+
+.btn[data-action="delete"]:hover {
+    background: #ffad33;
+}
+
+.btn.equals {
+    background: #4cd964;
+}
+
+.btn.equals:hover {
+    background: #5ed867;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+/* Ripple effect */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .calculator-container {
+        max-width: 100%;
+        margin: 10px;
+    }
+    
+    .calculator {
+        padding: 20px;
+        margin: 0;
+    }
+    
+    .calculator-display {
+        padding: 15px;
+    }
+    
+    .current-operand {
+        font-size: 2rem;
+    }
+    
+    .btn {
+        padding: 15px;
+        font-size: 1.2rem;
+    }
+    
+    .btn.scientific {
+        font-size: 1rem;
+    }
+}
+
+/* Dark mode animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.calculator {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Button press animation */
+.btn.pressed {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+}
+
+/* Error state */
+.calculator-display.error .current-operand {
+    color: #ff3b30;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
